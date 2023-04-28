@@ -1,12 +1,13 @@
-const Cart = () => {
+const Cart = (props) => {
   return (
-    <div className="overlay" style={{ display: "none" }}>
+    <div className="overlay">
       <div className="drawer">
         <div>
           <h2>
             Корзина
             {
-              <img
+              <img 
+              onClick={props.onClose}
                 className="cartItemButton"
                 width={32}
                 height={32}
