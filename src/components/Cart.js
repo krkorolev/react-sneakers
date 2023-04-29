@@ -1,4 +1,4 @@
-const Cart = (props) => {
+const Cart = ({ items, onClose, deletedCard }) => {
   return (
     <div className="overlay">
       <div className="drawer">
@@ -6,8 +6,8 @@ const Cart = (props) => {
           <h2>
             Корзина
             {
-              <img 
-              onClick={props.onClose}
+              <img
+                onClick={onClose}
                 className="cartItemButton"
                 width={32}
                 height={32}
@@ -18,26 +18,30 @@ const Cart = (props) => {
           </h2>
         </div>
         <div className="cartItems">
-          <div className="cartItem">
-            <div
-              className="cartItemImg"
-              style={{
-                backgroundImage: "url(/img/products/sneakers-1.jpg)",
-              }}
-            ></div>
-            <div className="cartItemInfo">
-              <p>Мужские Кроссовки Nike Air Max 270</p>
-              <b>12 999 руб.</b>
+          {items.map((item) => (
+            <div className="cartItem">
+              <div
+                className="cartItemImg"
+                style={{
+                  backgroundImage: `url(${item.img})`,
+                }}
+              ></div>
+              <div className="cartItemInfo">
+                <p>{item.title}</p>
+                <b>{item.price}руб.</b>
+              </div>
+              <img
+                onClick={() => deletedCard(item.id)}
+                className="cartItemButton"
+                width={32}
+                height={32}
+                src="/img/products/btn-close.svg"
+                alt="закрыть"
+              />
             </div>
-            <img
-              className="cartItemButton"
-              width={32}
-              height={32}
-              src="/img/products/btn-close.svg"
-              alt="закрыть"
-            />
-          </div>
+          ))}
         </div>
+
         <div className="cartTotal">
           <ul>
             <li>

@@ -46,7 +46,7 @@ code {
     font-size: 24px;
     line-height: 29px;
     color: #000000;
-    padding:30px;
+    padding: 30px;
 
     display: flex;
     justify-content: space-between;
@@ -64,6 +64,7 @@ code {
   .headerLogo {
     display: flex;
   }
+
   .cart {
     cursor: pointer;
   }
@@ -211,6 +212,12 @@ code {
       border-radius: 10px;
       display: flex;
       align-items: center;
+      position: relative;
+
+      .searchClear {
+        position: absolute;
+        right: 10px;
+      }
 
     }
 
@@ -227,7 +234,8 @@ code {
     padding: 40px 0px;
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
 
-   
+
   }
 }
