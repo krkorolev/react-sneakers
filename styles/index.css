@@ -60,6 +60,9 @@ code {
 .header .headerLogo {
   display: flex;
 }
+.header .cart {
+  cursor: pointer;
+}
 .header .headerInfo {
   padding-left: 20px;
 }
@@ -145,7 +148,8 @@ code {
   border-bottom: 1px dashed #DFDFDF;
   margin: 0px 10px;
 }
-.cartTotal .btn-green {
+
+.btn-green {
   width: 325px;
   height: 55px;
   left: 895px;
@@ -157,8 +161,28 @@ code {
   border-radius: 18px;
   border: none;
 }
-.cartTotal .btn-green:hover {
+.btn-green:hover {
   background: #87dd1d;
+}
+
+.cartEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 50px;
+}
+.cartEmpty h2 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+}
+.cartEmpty p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 0.4;
+  padding-bottom: 40px;
+  text-align: center;
 }
 
 .products {
@@ -180,6 +204,11 @@ code {
   border-radius: 10px;
   display: flex;
   align-items: center;
+  position: relative;
+}
+.products .productsTitle .search .searchClear {
+  position: absolute;
+  right: 10px;
 }
 .products .productsTitle input {
   border: none;
@@ -191,4 +220,5 @@ code {
   padding: 40px 0px;
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
 }/*# sourceMappingURL=index.css.map */

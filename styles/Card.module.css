@@ -37,9 +37,6 @@
   font-size: 14px;
   line-height: 17px;
 }
-.card .cardBottom .button {
-  background: #FFFFFF;
-  border: none;
-  border-radius: 8px;
+.card .cardBottom .plus {
   cursor: pointer;
 }/*# sourceMappingURL=Card.module.css.map */
