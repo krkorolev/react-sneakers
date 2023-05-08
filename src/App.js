@@ -96,7 +96,7 @@ function App() {
         )}
 
         <Header onOpenendCart={() => setCartOpenend(true)} />
-        <Route path="/" exact>
+        <Route path=" " exact>
           <Home
             onSearch={onSearch}
             onAddedToFavorite={onAddedToFavorite}
@@ -108,7 +108,7 @@ function App() {
             isLoading={isLoading}
           />
         </Route>
-        <Route path="/favorites" exact>
+        <Route path="favorites" exact>
           <Favorites
             items={favorite}
             searchValue={searchValue}
@@ -116,7 +116,7 @@ function App() {
             onAddedToCart={onAddedToCart}
           />
         </Route>
-        <Route path="/order" exact>
+        <Route path="order" exact>
           <Order items={itemsOrder} />
         </Route>
       </div>

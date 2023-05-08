@@ -32,7 +32,7 @@ const Cart = ({ items, onClose, deletedCard, setItemsOrder }) => {
               className="cartItemButton"
               width={32}
               height={32}
-              src="/img/products/btn-close.svg"
+              src="img/products/btn-close.svg"
               alt="закрыть"
             />
           }
@@ -57,7 +57,7 @@ const Cart = ({ items, onClose, deletedCard, setItemsOrder }) => {
                     className="cartItemButton"
                     width={32}
                     height={32}
-                    src="/img/products/btn-close.svg"
+                    src="img/products/btn-close.svg"
                     alt="закрыть"
                   />
                 </div>

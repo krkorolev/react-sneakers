@@ -7,7 +7,7 @@ const Header = (props) => {
     <header className="header">
       <Link to="/">
         <div className="headerLogo">
-          <img width={40} height={40} alt="логотип" src="/img/logo.png" />
+          <img width={40} height={40} alt="логотип" src="img/logo.png" />
           <div className="headerInfo">
             <h1>React sneakers</h1>
             <p>магазин лучших кросовок</p>
@@ -17,7 +17,7 @@ const Header = (props) => {
       <div className="headerMenu">
         <ul>
           <li className="cart" onClick={props.onOpenendCart}>
-            <img width={20} height={20} alt="корзина" src="/img/cart.svg" />
+            <img width={20} height={20} alt="корзина" src="img/cart.svg" />
             <span>{totalPrice} руб.</span>
           </li>
           <li>
@@ -26,13 +26,13 @@ const Header = (props) => {
                 width={20}
                 height={20}
                 alt="понравившееся"
-                src="/img/like.svg"
+                src="img/like.svg"
               />
             </Link>
           </li>
           <li>
             <Link to="/order">
-              <img width={20} height={20} alt="профиль" src="/img/union.svg" />
+              <img width={20} height={20} alt="профиль" src="img/union.svg" />
             </Link>
           </li>
         </ul>

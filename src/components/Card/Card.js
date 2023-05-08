@@ -51,8 +51,8 @@ const Card = ({
           className={styles.btnUnlike}
           src={
             isAddedFavorites(parentId) 
-              ? "/img/products/like.svg"
-              : "/img/products/unlike.svg"
+              ? "img/products/like.svg"
+              : "img/products/unlike.svg"
           }
           alt="unlike"
           onClick={onClickFavorite}
@@ -74,8 +74,8 @@ const Card = ({
             alt="добавить"
             src={
               isItemAdded(parentId)
-                ? "/img/products/done.svg"
-                : "/img/products/plus.svg"
+                ? "img/products/done.svg"
+                : "img/products/plus.svg"
             }
           />
         )}
