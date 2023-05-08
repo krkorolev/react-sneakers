@@ -1,4 +1,8 @@
+import React, { useContext } from "react";
 import Card from "../components/Card/Card";
+import { AppContext } from "../App";
+
+
 const Home = ({
   onSearch,
   onAddedToFavorite,
@@ -6,7 +10,36 @@ const Home = ({
   setSearchValue,
   items,
   searchValue,
+  // itemsCart,
+  isLoading,
 }) => {
+  const {favorite} = useContext(AppContext)
+  const someFavorites = (obj) => {
+    // console.log(obj.parentId)
+    favorite.some ((el)=> Number(el.parentId) === Number(obj.parentId))
+  }
+  
+  const renderItems = () => {
+    const filtredItems = items.filter((el) =>
+      el.title.toLowerCase().includes(searchValue)
+    );
+    return (isLoading ? [...Array(10)] : filtredItems).map((obj, index) => (
+      <Card
+        key={index}
+        {...obj}
+        // title={obj.title}
+        // price={obj.price}
+        // img={obj.img}
+        // id={obj.id}
+        // parentId={obj.parentId}
+        onPlus={onAddedToCart}
+        favorites={()=>someFavorites(obj)}
+        onFavorite={onAddedToFavorite}
+        isLoading={isLoading}
+      />
+    ));
+  };
+
   return (
     <section className="products">
       <div className="productsTitle">
@@ -30,21 +63,7 @@ const Home = ({
           />
         </div>
       </div>
-      <div className="productItems">
-        {items
-          .filter((el) => el.title.toLowerCase().includes(searchValue))
-          .map((obj, index) => (
-            <Card
-              key={index}
-              title={obj.title}
-              price={obj.price}
-              img={obj.img}
-              id={obj.id}
-              onPlus={onAddedToCart}
-              onFavorite={onAddedToFavorite}
-            />
-          ))}
-      </div>
+      <div className="productItems">{renderItems()}</div>
     </section>
   );
 };
